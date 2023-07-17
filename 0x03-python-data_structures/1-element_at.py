@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 # -----------------------------------------------------------
 # Python program that:
-# demonstrates how to retrieve an element from a list like in C
-#
-# (C) 2022 Igbinijesu Samuel, Lagos, Nigeria
-# email igbinijesusamuel@gmail.com
+# demonstrates how to retrieve an element from a list like in c
 # -----------------------------------------------------------
 
 
@@ -24,4 +21,4 @@ def element_at(my_list, idx):
         return None
     if idx >= len(my_list):
         return None
-    return my_list[idx]i
+    return my_list[idx]
