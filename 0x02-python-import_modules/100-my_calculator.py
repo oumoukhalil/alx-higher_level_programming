@@ -1,15 +1,26 @@
 #!/usr/bin/python3
-
 if __name__ == "__main__":
-    """Print the number of and list of arguments."""
-    import sys
+    from calculator_1 import add, sub, mul, div
+    from sys import argv
 
-    count = len(sys.argv) - 1
-    if count == 0:
-        print("0 arguments.")
-    elif count == 1:
-        print("1 argument:")
+    if len(argv) != 4:
+        print(f"Usage: {argv[0]} <a> <operator> <b>")
+        exit(1)
+
+    a = int(argv[1])
+    b = int(argv[3])
+    operator = argv[2]
+
+    if operator == '+':
+        result = add(a, b)
+    elif operator == '-':
+        result = sub(a, b)
+    elif operator == '*':
+        result = mul(a, b)
+    elif operator == '/':
+        result = div(a, b)
     else:
-        print("{} arguments:".format(count))
-    for i in range(count):
-        print("{}: {}".format(i + 1, sys.argv[i + 1]))
+        print("Unknown operator. Available operators: +, -, * and /")
+        exit(1)
+
+    print(f"{a} {operator} {b} = {result}")
