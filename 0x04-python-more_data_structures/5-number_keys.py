@@ -1,10 +1,13 @@
 #!/usr/bin/python3
+
+
 def number_keys(a_dictionary):
-    num = 0
-    list_keys = list(a_dictionary.keys())
+    """ function that returns the number of keys in a dictionary.
 
-    for i in list_keys:
-        num += 1
+        Args:
+        a_dictionary: a dictionary
 
-    return (num)
-
+        Return:
+        the number of keys
+    """
+    return (len(a_dictionary.keys()))
