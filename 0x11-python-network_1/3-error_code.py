@@ -1,23 +1,17 @@
 #!/usr/bin/python3
+"""displays the value of the X-Request-Id variable found in
+the header of the response.
 """
-    Write a Python script that takes in a URL, 
-    sends a request to the URL and displays the body of the response (decoded in utf-8).
-"""
 
 
-import urllib.request
-import urllib.error
-import sys
-"""import modules"""
+if __name__ == "__main__":
+    from urllib.request import urlopen
+    from urllib.error import HTTPError
+    from sys import argv
 
-
-if __name__ == 'main':
-    url = sys.argv[1]
-    req = urllib.request.Request(url)
     try:
-        with urllib.request.urlopen(req) as response:
-            result = response.read()
-            print("{}".format(result.decode('utf8')))
-    except urllib.error.HTTPError as e:
-        print("Erroer code: {}".format(e.code)):wq
+        with urlopen(argv[1]) as response:
+            print(response.read().decode('utf-8'))
+    except HTTPError as error:
+        print('Error code:', error.code)
 
