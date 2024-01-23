@@ -1,12 +1,5 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-"""
-Created on Thu May 21 17:43:34 2020
-
-@author: Robinson Montes
-"""
-
-
 def text_indentation(text):
     """
     prints a string with 2 new lines after '.', '?', and ':'
