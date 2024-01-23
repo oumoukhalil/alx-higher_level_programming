@@ -1,32 +1,24 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu May 21 17:43:34 2020
+"""This module contains:
+add_integer - function that adds up two integers.
 
-@author: Robinson Montes
+Test file for this module is located in ./tests/ directory
+Run (python3 -m doctest -v ./tests/0-add_integer.txt) to test
 """
 
 
 def add_integer(a, b=98):
-    """
-    adds two integers
+    """add_integer - adds 2 integers
 
     Args:
-        a (int): First integer to add
-        b (int): Second integer to add
+        a: positional argument a (must be an integer)
+        b: keyword argumrnt b (must be an integer)
 
-    Raises:
-        TypeError: Exception if size is not an integer
-
+    Return:
+        sum of two integers or the keyword value if one arg is given
     """
-    if type(a) is not int:
-        if type(a) is float and a == a and abs(a) <= 1.7976931348623158e+308:
-            a = int(a)
-        else:
-            raise TypeError("a must be an integer")
-    if type(b) is not int:
-        if type(b) is float and b == b and abs(b) <= 1.7976931348623158e+308:
-            b = int(b)
-        else:
-            raise TypeError("b must be an integer")
-    return a + b
+    if not isinstance(a, (int, float)):
+        raise TypeError('a must be an integer')
+    if not isinstance(b, (int, float)):
+        raise TypeError('b must be an integer')
+    return int(a + b)
